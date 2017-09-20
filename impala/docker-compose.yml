@@ -23,7 +23,7 @@ services:
      - datasource.cdm.schema=cdm
      - datasource.ohdsi.schema=ohdsi
      - datasource.username=ohdsi
-     - datasource.password=
+     - datasource.password=ohdsi
      - spring.jpa.properties.hibernate.default_schema=ohdsi
      - spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
      - spring.batch.repository.tableprefix=ohdsi.BATCH_
@@ -32,5 +32,5 @@ services:
      - flyway.schemas=ohdsi
      - flyway.placeholders.ohdsiSchema=ohdsi
      - flyway.datasource.username=ohdsi
-     - flyway.datasource.password=
+     - flyway.datasource.password=ohdsi
      - flyway.locations=classpath:db/migration/postgresql
