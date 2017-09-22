@@ -8,13 +8,13 @@ VALUES (1, 'OHDSI CDM V5 Database', 'OHDSI-CDMV5',
   'jdbc:impala://bottou01.sjc.cloudera.com:21050', 'impala');
 
 -- CDM daimon
-INSERT INTO ohdsi.source_daimon( source_daimon_id, source_id, daimon_type, table_qualifier, priority) VALUES (1, 1, 0, 'omop_cdm_parquet', 2);
+INSERT INTO ohdsi.source_daimon( source_daimon_id, source_id, daimon_type, table_qualifier, priority) VALUES (1, 1, 0, 'omop_cdm_kudu', 2);
 
 -- VOCABULARY daimon
-INSERT INTO ohdsi.source_daimon( source_daimon_id, source_id, daimon_type, table_qualifier, priority) VALUES (2, 1, 1, 'omop_cdm_parquet', 2);
+INSERT INTO ohdsi.source_daimon( source_daimon_id, source_id, daimon_type, table_qualifier, priority) VALUES (2, 1, 1, 'omop_cdm_kudu', 2);
 
 -- RESULTS daimon
-INSERT INTO ohdsi.source_daimon( source_daimon_id, source_id, daimon_type, table_qualifier, priority) VALUES (3, 1, 2, 'omop_cdm_parquet', 2);
+INSERT INTO ohdsi.source_daimon( source_daimon_id, source_id, daimon_type, table_qualifier, priority) VALUES (3, 1, 2, 'omop_cdm_kudu', 2);
 
 -- EVIDENCE daimon
 INSERT INTO ohdsi.source_daimon( source_daimon_id, source_id, daimon_type, table_qualifier, priority) VALUES (4, 1, 3, 'ohdsi', 2);

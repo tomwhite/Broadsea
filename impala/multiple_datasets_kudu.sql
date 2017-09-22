@@ -1,6 +1,6 @@
 -- run this to create missing tables in results schema
 -- http://www.ohdsi.org/web/wiki/doku.php?id=documentation:software:webapi:multiple_datasets_configuration
-CREATE TABLE omop_cdm_parquet.cohort_inclusion(
+CREATE TABLE omop_cdm_kudu.cohort_inclusion(
   cohort_definition_id int,
   rule_sequence int,
   name string,
@@ -14,7 +14,7 @@ TBLPROPERTIES (
 )
 ;
 
-CREATE TABLE omop_cdm_parquet.cohort_inclusion_result(
+CREATE TABLE omop_cdm_kudu.cohort_inclusion_result(
   cohort_definition_id int,
   inclusion_rule_mask bigint,
   person_count bigint,
@@ -27,7 +27,7 @@ TBLPROPERTIES (
 )
 ;
 
-CREATE TABLE omop_cdm_parquet.cohort_inclusion_stats(
+CREATE TABLE omop_cdm_kudu.cohort_inclusion_stats(
   cohort_definition_id int,
   rule_sequence int,
   person_count bigint,
@@ -42,7 +42,7 @@ TBLPROPERTIES (
 )
 ;
 
-CREATE TABLE omop_cdm_parquet.cohort_summary_stats(
+CREATE TABLE omop_cdm_kudu.cohort_summary_stats(
   cohort_definition_id int,
   base_count bigint,
   final_count bigint,
@@ -55,7 +55,7 @@ TBLPROPERTIES (
 )
 ;
 
-CREATE TABLE omop_cdm_parquet.feas_study_result(
+CREATE TABLE omop_cdm_kudu.feas_study_result(
   study_id int,
   inclusion_rule_mask bigint,
   person_count bigint,
@@ -68,7 +68,7 @@ TBLPROPERTIES (
 )
 ;
 
-CREATE TABLE omop_cdm_parquet.feas_study_index_stats(
+CREATE TABLE omop_cdm_kudu.feas_study_index_stats(
   study_id int,
   person_count bigint,
   match_count bigint,
@@ -81,7 +81,7 @@ TBLPROPERTIES (
 )
 ;
 
-CREATE TABLE omop_cdm_parquet.feas_study_inclusion_stats(
+CREATE TABLE omop_cdm_kudu.feas_study_inclusion_stats(
   study_id int,
   rule_sequence int,
   name string,
@@ -97,7 +97,7 @@ TBLPROPERTIES (
 )
 ;
 
-create table omop_cdm_parquet.heracles_analysis
+create table omop_cdm_kudu.heracles_analysis
 (
 	analysis_id int,
 	analysis_name string,
@@ -115,7 +115,7 @@ TBLPROPERTIES (
   'kudu.master_addresses' = 'bottou04.sjc.cloudera.com'
 )
 ;
-CREATE TABLE omop_cdm_parquet.HERACLES_HEEL_results
+CREATE TABLE omop_cdm_kudu.HERACLES_HEEL_results
 (
 cohort_definition_id int,
 analysis_id INT,
@@ -129,7 +129,7 @@ TBLPROPERTIES (
 )
 ;
 
-create table omop_cdm_parquet.heracles_results
+create table omop_cdm_kudu.heracles_results
 (
 	cohort_definition_id int,
 	analysis_id int,
@@ -150,7 +150,7 @@ TBLPROPERTIES (
 ;
 
 
-create table omop_cdm_parquet.heracles_results_dist
+create table omop_cdm_kudu.heracles_results_dist
 (
 	cohort_definition_id int,
 	analysis_id int,
@@ -179,7 +179,7 @@ TBLPROPERTIES (
 )
 ;
 
-CREATE TABLE omop_cdm_parquet.ir_analysis_dist (
+CREATE TABLE omop_cdm_kudu.ir_analysis_dist (
   analysis_id int,
   target_id int,
   outcome_id int,
@@ -204,7 +204,7 @@ TBLPROPERTIES (
 )
 ;
 
-CREATE TABLE omop_cdm_parquet.ir_strata(
+CREATE TABLE omop_cdm_kudu.ir_strata(
   analysis_id int,
   strata_sequence int,
   name string,
@@ -218,7 +218,7 @@ TBLPROPERTIES (
 )
 ;
 
-CREATE TABLE omop_cdm_parquet.ir_analysis_result(
+CREATE TABLE omop_cdm_kudu.ir_analysis_result(
   analysis_id int,
   target_id int,
   outcome_id int,
@@ -235,7 +235,7 @@ TBLPROPERTIES (
 )
 ;
 
-CREATE TABLE omop_cdm_parquet.ir_analysis_strata_stats(
+CREATE TABLE omop_cdm_kudu.ir_analysis_strata_stats(
   analysis_id int,
   target_id int,
   outcome_id int,
